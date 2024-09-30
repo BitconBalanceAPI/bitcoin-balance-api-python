@@ -1,12 +1,8 @@
-# bitcoin-balance-api-python
+#!/usr/bin/env python3
+# script: retrieve bitcoin balance from bitcoin-balance-api.com
+# author: Bitcoin Balance API <hello@bitcoin-balance-api.com>
+# notes: 
 
-Easy-to-use API for retrieving the balance of a Bitcoin wallet with https://bitcoin-balance-api.com/
-
-Swagger: https://api-testnet.bitcoin-balance-api.com/docs/
-
-## Get Balance
-
-```
 import requests
 import json
 
@@ -18,5 +14,3 @@ r = s.get('https://api-testnet.bitcoin-balance-api.com/v1/address/%s' % (address
 if r.status_code == 200:
     response = json.loads(r.content)
     print(f'Bitcoin Balance: %s' % (response['balance']))
-
-```
